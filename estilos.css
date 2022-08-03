@@ -1,0 +1,154 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+body{
+    background-color: rgb(71, 50, 50);
+}
+
+nav{
+    height: 4vh;
+    }
+    
+.logo{
+    background-color: rgba(159, 0, 199, 0.336);
+    height: 25vh;
+    border-bottom: solid 4px rgba(1, 51, 58, 0.274);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+    
+h1{
+    font-size: 4rem;
+    color: aliceblue;
+    font-family:'Arial Narrow Bold', sans-serif;
+}
+    
+.botonera{
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;    
+}
+
+.botones{
+    height: 5vh;
+    width: 25vw;   
+}
+
+.botones_vinc{
+    display: inline-block;
+    background-color: rgba(0, 255, 255, 0.322);
+    padding-top: 0.6vh;
+    height: 5vh;
+    width: 25vw;
+    color: black;
+    text-decoration: none;
+    font-size: 1.4rem;
+    border: solid 2px black;
+}
+
+.botones_vinc:hover{
+    background-color: rgba(46, 1, 248, 0.466);
+    color: aliceblue;
+}
+
+.contenedor_carga{
+    background-color:rgba(159, 0, 199, 0.336);
+    width: 30vw;
+    height: 30vh;
+    margin-left: 30%;
+    margin-top: 20px;
+    border: solid 2px black;
+}
+#form_login{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+}
+.input_log{
+    width: 60%;
+}
+
+.base{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.formulario{
+    background-color: rgba(0, 255, 255, 0.322);
+    width: 50vw;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 10%;
+}
+
+.form_items{
+    font-size: 15px;
+    color: black
+}
+
+.alert{
+    color: white;
+    text-align: center;
+}
+
+.lista_pedidos{
+    width: 80vw;
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content:space-evenly;
+    align-items: flex-start;
+}
+
+.pedido_en_proceso{
+    background-color:rgba(0, 255, 255, 0.322);
+    height: 30vh;
+    width: 20vw;
+    margin-left: 5vw;
+    margin-top: 5vh;
+    border: solid 2px rgba(14, 12, 12, 0.692);
+    display: flex;
+    flex-direction: column;
+}
+
+.pedido_entregado{
+    background-color:rgba(0, 255, 255, 0.322);
+    height: 50vh;
+    width: 20vw;
+    margin-left: 5vw;
+    margin-top: 5vh;
+    border: solid 2px rgba(14, 12, 12, 0.692);
+    display: flex;
+    flex-direction: column;
+}
+
+.datos_cosulta{
+    font-size: 15px;
+    color: white;
+}
+
+#boton{
+    padding-top: 1vh;
+    background-color: rgba(159, 0, 199, 0.336);
+    text-align: center;
+    height: 4vh;
+    width: 100%;
+    text-decoration: none;
+    color: black;
+}
+
+#boton:hover{
+    background-color: aqua;
+}
