@@ -1,10 +1,10 @@
 <?php 
-include('header.php');
-include('conexion.php');
+//include('header.php');
+include('../modelos/funcionalidades.php');
 
 $id=$_GET['id'];
 
-$consulta = mysqli_query($conexion_db, "SELECT * FROM pedidos WHERE id='$id'");
+$consulta = datos_para_ticket($id);
 while($mostrar= mysqli_fetch_assoc($consulta)){
 
     /*Datos funciones de hora*/
@@ -19,12 +19,7 @@ while($mostrar= mysqli_fetch_assoc($consulta)){
     "\r\r TOTAL........$".$mostrar['precio'];
 }
 
-
-
-
     $archivo = fopen('./tickets/pedido'.$id.'.txt', 'w');
     fputs($archivo, $texto);
 
-    mysqli_close($conexion_db);
-
-    header("Location: ver_entregados.php?ticket");
+    header("Location: ../index.php?ruta=ver_entregados");

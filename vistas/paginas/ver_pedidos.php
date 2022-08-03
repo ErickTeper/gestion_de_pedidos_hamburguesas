@@ -1,16 +1,15 @@
 
 <?php
-include('conexion.php');
-include('header.php');
-session_start();
+include('./modelos/funcionalidades.php');
+//session_start();
 
 
-if(isset($_SESSION['admin'])){
+//if(isset($_SESSION['admin'])){
 ?>
 
 <div class='lista_pedidos'>
 <?php
-$consulta = mysqli_query($conexion_db, "SELECT * FROM pedidos WHERE entregado='procesando'");
+$consulta = mostrar_pedidos();
 while($mostrar= mysqli_fetch_assoc($consulta)){
 ?>
 
@@ -24,14 +23,14 @@ while($mostrar= mysqli_fetch_assoc($consulta)){
     <div class='datos_cosulta'><p>AGREGADO:<?php echo $mostrar['agregado3']?></p><br></div>
     <div class='datos_cosulta'><p><i><?php echo $mostrar['comentarios']?></i></p><br></div>
     <div class='datos_cosulta'><p><b>PRECIO:</b> $<?php echo $mostrar['precio']?></p></div>
-    <a href="entregado.php?id=<?php echo $mostrar['id']?>" id="boton"><p>ENTREGADO</p></a>
+    <a href="./modelos/entregado.php?id=<?php echo $mostrar['id']?>" id="boton"><p>ENTREGADO</p></a>
 
 </div>
 
 <?php }
-}else{
+/*}else{
     header("Location: index.php?");
-}
+}*/
  ?>
 
 </div>

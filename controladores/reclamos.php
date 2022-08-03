@@ -1,5 +1,5 @@
 <?php
-include('conexion.php');
+include('../modelos/funcionalidades.php');
 
 $reclamo = $_POST["reclamo"];
 
@@ -15,7 +15,5 @@ if(($tipo_img != 'image/jpg' && $tipo_img != 'image/jpeg' && $tipo_img != 'image
     header('Location: ver_entregados.php?error_reclamo');
 }else{
 move_uploaded_file($tmp_img, $destino); 
-mysqli_query($conexion_db, "INSERT INTO reclamos VALUES(DEFAULT, '$reclamo', '$nombre_img')" );   
-header("Location: ver_entregados.php?reclamo");
+reclamar($reclamo, $nombre_img);
 }
-mysqli_close($conexion_db);

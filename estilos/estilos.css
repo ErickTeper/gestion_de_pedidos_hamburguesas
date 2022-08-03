@@ -31,7 +31,7 @@ h1{
     list-style-type: none;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
     text-align: center;    
 }
 
@@ -45,7 +45,7 @@ h1{
     background-color: rgba(0, 255, 255, 0.322);
     padding-top: 0.6vh;
     height: 5vh;
-    width: 25vw;
+    width: 24vw;
     color: black;
     text-decoration: none;
     font-size: 1.4rem;
@@ -151,4 +151,14 @@ h1{
 
 #boton:hover{
     background-color: aqua;
+}
+
+.error_404{
+    background-color: rgba(159, 0, 199, 0.336);
+    margin-left: 20vw;
+    margin-top: 5vh;
+    width: 50vw;
+    height: 30vh;
+    text-align: center;
+
 }
