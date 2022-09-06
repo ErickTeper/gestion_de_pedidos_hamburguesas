@@ -13,10 +13,10 @@
 Instrucciones de uso
 =============
 
-###Inicio sesion
+### Inicio sesion
 Inicie sesion con nombre de usuario y contraseña para poder utilizar el sistema
 
-###Cargar pedido
+### Cargar pedido
 En la pestaña "generar pedido" seleccione tipo de hamburguesa, cantidad de medallones, tilde el casillero de papas en caso de que el pedido las incluya, indique los agregados y agregue alguna aclaracion en caso de que lo requiera. Cargue el pedido una vez este el formulario completado
 
 ### Ver perdidos en elaboración
@@ -56,34 +56,34 @@ Utiliza los datos del pedido y las funciones de hora y fecha para generar un tic
 
 ## Modelos
 
-###dbPedidos.php
+### dbPedidos.php
 La clase dbPedidos crea objetos cuyos atributos son los datos para establecer la conexión a la base de datos.
 Los metodos de dicha clase son los utilizados por los controladores para efectuar las conultas, altas o modificaciones a los pedidos almacenados en la base de datos.
 
-###validar_usuario.php
+### validar_usuario.php
 Toma los datos del inicio de sesion ingresados por el usuario para corroborar la existencia del mismo mediante la consulta a la tabla administradores.
 
 ## Vistas
-###plantilla.php
+### plantilla.php
 Muestra la barra de navegación a la que puede acceder el usuario y direcciona a inicio_sesion.php siempre en caso de no haber una sesión iniciada.
 
-###inicio_sesion.php
+### inicio_sesion.php
 Es la vista inicial de la página y se muestra siempre que no se haya iniciado sesión. La misma es un formulario que toma los datos de usuario y contraseña para realizar el inicio de sesión.
 
-###formulario_pedido.php
+### formulario_pedido.php
 Muestra un formulario en el que se pueden ingresar los datos del pedido. Los campos obligatorios no pueden quedar vacios dado a las opciones default. los campo de agregados y comentarios pueden quedar vación.
 
-###ver_entregados.php
+### ver_entregados.php
 Se genera una lista y luego se muestran los pedidos que ya fueron entregados y se muestra en cada pedido la opcion de generar el ticket o agregar un reclamo.
 
-###ver_pedidos.php
+### ver_pedidos.php
 Se genera una lista y se muestran los pedidos que se encuentran en estado de "elaborando", cada pedido se muestra con un boton que permite marcar el pedido como "entregado"
 
-###error404.php
+### error404.php
 Se muestra una página de error en caso de que el url no corresponda a una sección de la página.
 
 ## Utilidades
-###calculo_precio.php
+### calculo_precio.php
 el mismo es utilizado para calcular automaticamente el valor del pedido antes de ser ingresado en la base de datos. 
 
 
