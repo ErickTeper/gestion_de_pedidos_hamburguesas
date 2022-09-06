@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 03-08-2022 a las 01:53:09
+-- Tiempo de generación: 06-09-2022 a las 22:30:24
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 8.1.1
 
@@ -39,7 +39,9 @@ CREATE TABLE `administradores` (
 
 INSERT INTO `administradores` (`id_admin`, `usuario`, `clave`) VALUES
 (1, '20123456', 'admin123'),
-(2, 'operario', 'admin2');
+(2, 'operario', 'admin2'),
+(4, 'admin', 'admin'),
+(5, 'admin', 'admin');
 
 -- --------------------------------------------------------
 
@@ -100,44 +102,13 @@ INSERT INTO `pedidos` (`id`, `hamburguesa`, `medallones`, `papas`, `agregado1`, 
 (24, 'americana', 3, 1, 'cheddar', 'cebolla', 'guacamole', '', 1200, 'entregado'),
 (25, 'criolla', 2, 1, '', '', '', '', 870, 'procesando'),
 (26, 'clasica', 1, 1, 'pepinillos', 'guacamole', '', '', 790, 'entregado'),
-(27, 'americana', 2, 0, '', '', '', '', 770, 'procesando'),
-(28, 'clasica', 2, 1, 'cheddar', '', '', '', 870, 'procesando');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `pedidos_php_avanzado`
---
-
-CREATE TABLE `pedidos_php_avanzado` (
-  `id` int(3) NOT NULL,
-  `hamburguesa` varchar(15) NOT NULL,
-  `medallones` int(2) NOT NULL,
-  `papas` tinyint(1) DEFAULT NULL,
-  `agregado1` varchar(20) DEFAULT NULL,
-  `agregado2` varchar(20) DEFAULT NULL,
-  `agregado3` varchar(20) DEFAULT NULL,
-  `comentarios` text DEFAULT NULL,
-  `precio` int(5) NOT NULL,
-  `entregado` varchar(15) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `pedidos_php_avanzado`
---
-
-INSERT INTO `pedidos_php_avanzado` (`id`, `hamburguesa`, `medallones`, `papas`, `agregado1`, `agregado2`, `agregado3`, `comentarios`, `precio`, `entregado`) VALUES
-(19, 'criolla', 2, 1, 'cheddar', '', '', '', 970, 'entregado'),
-(20, 'americana', 1, 1, 'chimi', 'cheddar', 'cebolla', 'bien cocida', 1050, 'entregado'),
-(21, 'mexicana', 1, 0, 'pepinillos', 'guacamole', '', '', 890, 'procesando'),
-(22, 'clasica', 3, 1, 'chimi', '', '', '', 840, 'procesando'),
-(23, 'mexicana', 1, 1, 'cheddar', '', '', '', 1100, 'entregado'),
-(24, 'americana', 3, 1, 'cheddar', 'cebolla', 'guacamole', '', 1200, 'entregado'),
-(25, 'criolla', 2, 1, '', '', '', '', 870, 'procesando'),
-(26, 'clasica', 1, 1, 'pepinillos', 'guacamole', '', '', 790, 'entregado'),
-(27, 'americana', 2, 0, '', '', '', '', 770, 'procesando'),
-(28, 'clasica', 2, 1, 'cheddar', '', '', '', 870, 'entregado'),
-(34, 'mexicana', 1, 0, 'guacamole', '', '', '', 850, 'procesando');
+(27, 'americana', 2, 0, '', '', '', '', 770, 'entregado'),
+(28, 'clasica', 2, 1, 'cheddar', '', '', '', 870, 'procesando'),
+(33, 'mexicana', 1, 1, 'guacamole', '', '', 'bien cocida', 1050, 'entregado'),
+(34, 'americana', 1, 0, 'cheddar', 'pepinillos', 'chimi', '', 860, 'entregado'),
+(35, 'clasica', 3, 1, 'cebolla', '', '', '', 850, 'procesando'),
+(36, 'mexicana', 2, 1, 'cebolla', '', '', 'sin picante', 1100, 'procesando'),
+(37, 'criolla', 2, 1, 'guacamole', '', '', 'sin sal', 920, 'entregado');
 
 -- --------------------------------------------------------
 
@@ -156,28 +127,10 @@ CREATE TABLE `reclamos` (
 --
 
 INSERT INTO `reclamos` (`id`, `comentario`, `imagen`) VALUES
-(2, 'la hamburguesa llegó cruda', 0x68616d62757267756573615f63727564612e77656270);
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `reclamos_php_avanzado`
---
-
-CREATE TABLE `reclamos_php_avanzado` (
-  `id` int(3) NOT NULL,
-  `comentario` text NOT NULL,
-  `imagen` longblob DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `reclamos_php_avanzado`
---
-
-INSERT INTO `reclamos_php_avanzado` (`id`, `comentario`, `imagen`) VALUES
-(3, 'llego una salchicha en vez de una hamburguesa', 0x73616c6368696368612e6a7067),
-(4, 'llego quemada', 0x68616d62757267756573615f7175656d6164612e6a7067),
-(6, 'la hamburguesa llegó cruda', 0x68616d62757267756573615f63727564612e77656270);
+(2, 'la hamburguesa llegó cruda', 0x68616d62757267756573615f63727564612e77656270),
+(4, 'llego sin papas ', 0x6275726765722e6a7067),
+(5, 'tenia un solo medallón', 0x316d6564616c6c6f6e2e6a7067),
+(6, 'la hamburguesa llego cruda ', 0x68616d62757267756573615f63727564612e77656270);
 
 --
 -- Índices para tablas volcadas
@@ -202,21 +155,9 @@ ALTER TABLE `pedidos`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `pedidos_php_avanzado`
---
-ALTER TABLE `pedidos_php_avanzado`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indices de la tabla `reclamos`
 --
 ALTER TABLE `reclamos`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indices de la tabla `reclamos_php_avanzado`
---
-ALTER TABLE `reclamos_php_avanzado`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -227,7 +168,7 @@ ALTER TABLE `reclamos_php_avanzado`
 -- AUTO_INCREMENT de la tabla `administradores`
 --
 ALTER TABLE `administradores`
-  MODIFY `id_admin` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_admin` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `cocteles`
@@ -239,24 +180,12 @@ ALTER TABLE `cocteles`
 -- AUTO_INCREMENT de la tabla `pedidos`
 --
 ALTER TABLE `pedidos`
-  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
-
---
--- AUTO_INCREMENT de la tabla `pedidos_php_avanzado`
---
-ALTER TABLE `pedidos_php_avanzado`
-  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT de la tabla `reclamos`
 --
 ALTER TABLE `reclamos`
-  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT de la tabla `reclamos_php_avanzado`
---
-ALTER TABLE `reclamos_php_avanzado`
   MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 

@@ -2,17 +2,17 @@
 
 class dbPedidos
 {
-
+/*
     private $host = "localhost";
     private $user = "root";
     private $pass = "";
     private $db_name = "Erick_teper";
-    /*
+  */  
     private $host = "localhost";
     private $user = "id18194560_erick";
     private $pass = "K5o&w~M>9_+!OQ19";
     private $db_name = "id18194560_erick_teper";
-    */
+    
 
     private $conexion;
     private $error = false;
