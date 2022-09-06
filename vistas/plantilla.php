@@ -21,27 +21,22 @@
     </nav>
 </header> 
 <section>
-    <?php 
-
-//DEBO TERMINAR DE IMPLEMENTAR LAS SESIONES
-//if(isset($_SESSION['admin'])){     
+    <?php     
         
     if(!$_GET){
-        include "paginas/inicio.php";
+        include "paginas/inicio_sesion.php";
     }elseif(isset($_GET["ruta"])){
             if(
               $_GET["ruta"]=="formulario_pedido" ||
               $_GET["ruta"]=="ver_pedidos" ||
-             $_GET["ruta"]=="ver_entregados"
+             $_GET["ruta"]=="ver_entregados"||
+             $_GET["ruta"]=="cerrar_sesion"
             ){
                include "paginas/" . $_GET["ruta"] . ".php";    
              }else{
              include "paginas/error404.php";
             }
-        }
-  //      }else{
-    //        include "paginas/inicio_sesion.php";
-     //   }
+    }
 
         ?>
 </section>

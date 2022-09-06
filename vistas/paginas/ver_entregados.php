@@ -1,13 +1,14 @@
 
 <?php
-include('./modelos/funcionalidades.php');
-//session_start();
-//if(isset($_SESSION['admin'])){
+include('./modelos/dbPedidos.php');
+session_start();
+if(isset($_SESSION['admin'])){
 ?>
 
 <div class='lista_pedidos'>
 <?php
-$consulta = mostrar_entregados();
+$pedidos = new dbPedidos();
+$consulta = $pedidos->mostrarEntregados();
 while($mostrar= mysqli_fetch_assoc($consulta)){
 ?>
 
@@ -45,9 +46,9 @@ if (isset($_GET['reclamo'])){
 if (isset($_GET['error_reclamo'])){
     echo '<h2 class="alert">formato o tamaño de imagen no aceptado</h2>';
 }
-/*}else{
+}else{
     header("Location: index.php?");
-}*/
+}
 
 
 ?>

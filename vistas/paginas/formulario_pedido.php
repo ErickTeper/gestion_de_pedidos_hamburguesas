@@ -1,11 +1,11 @@
 <?php 
-//session_start();
-//if(isset($_SESSION['admin'])){
+session_start();
+if(isset($_SESSION['admin'])){
 ?> 
 
 
 <div class="base">
-    <form action="./modelos/cargar_pedido.php" method="POST" class="formulario" enctype="multipart/form-data">
+    <form action="./controladores/pedido.controlador.php" method="POST" class="formulario" enctype="multipart/form-data">
         
         <h2 class="titulo">SOLICITAR HAMBURGUESA</h2>
         <h3 class="form_items">HAMBURGUESA</h3>
@@ -63,9 +63,9 @@
     if (isset($_GET['ok'])){
         echo '<h2 class="alert">pedido enviado</h2>';
     }
-/*}else{
-    header("Location: index.php?");
-}*/
+}else{
+    header("Location: index.php");
+}
 ?>
 
 </html>

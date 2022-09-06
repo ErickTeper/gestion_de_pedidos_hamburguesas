@@ -1,10 +1,14 @@
 <?php 
-//include('header.php');
-include('../modelos/funcionalidades.php');
+
+#se genera un ticket (archivos .txt) en la carpeta tickets con hora de impresion y datos del pedido
+
+require_once "../modelos/dbPedidos.php";
 
 $id=$_GET['id'];
 
-$consulta = datos_para_ticket($id);
+$db = new dbPedidos();
+
+$consulta = $db->datos_para_ticket($id);
 while($mostrar= mysqli_fetch_assoc($consulta)){
 
     /*Datos funciones de hora*/

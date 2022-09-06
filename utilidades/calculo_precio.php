@@ -1,5 +1,4 @@
 <?php
-/* Aquí de calcula el $precio de las hamburguesas segun estilo, cantidad de medallones, papas y agregados */
 
 switch ($hamburguesa) {
     case 'clasica':
